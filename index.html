@@ -5,89 +5,7 @@
   <title>Energia Solar na Agricultura</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      scroll-behavior: smooth;
-      background: #f5f5f5;
-    }
-
-    header {
-      background: linear-gradient(135deg, #2e7d32, #fbc02d);
-      color: white;
-      text-align: center;
-      padding: 60px 20px;
-    }
-
-    header h1 {
-      font-size: 2.5em;
-    }
-
-    header button {
-      padding: 10px 20px;
-      border: none;
-      background: white;
-      color: #2e7d32;
-      cursor: pointer;
-      border-radius: 5px;
-      font-weight: bold;
-    }
-
-    section {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    h2 {
-      color: #2e7d32;
-    }
-
-    .cards {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .card {
-      background: white;
-      padding: 15px;
-      flex: 1;
-      border-radius: 10px;
-      cursor: pointer;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: scale(1.05);
-    }
-
-    .hidden {
-      display: none;
-      margin-top: 10px;
-    }
-
-    input {
-      padding: 10px;
-      width: 100%;
-      margin-top: 10px;
-    }
-
-    .result {
-      margin-top: 10px;
-      font-weight: bold;
-      color: #2e7d32;
-    }
-
-    footer {
-      text-align: center;
-      background: #2e7d32;
-      color: white;
-      padding: 20px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -95,13 +13,13 @@
 <header>
   <h1>Energia Solar na Agricultura</h1>
   <p>Um caminho para um futuro sustentável</p>
-  <button onclick="document.getElementById('sobre').scrollIntoView()">Explorar</button>
+  <button onclick="scrollToSection()">Explorar</button>
 </header>
 
 <section id="sobre">
   <h2>O que é Energia Solar?</h2>
   <p>
-    A energia solar é uma fonte de energia limpa que vem do sol. Ela é captada por painéis solares e transformada em eletricidade.
+    A energia solar é uma fonte limpa que vem do sol e pode ser usada para gerar eletricidade.
   </p>
 </section>
 
@@ -111,17 +29,17 @@
     
     <div class="card" onclick="toggle(this)">
       Irrigação
-      <div class="hidden">Pode bombear água usando energia solar.</div>
+      <div class="hidden">Uso para bombear água nas plantações.</div>
     </div>
 
     <div class="card" onclick="toggle(this)">
       Equipamentos
-      <div class="hidden">Pode alimentar máquinas agrícolas.</div>
+      <div class="hidden">Alimenta máquinas agrícolas.</div>
     </div>
 
     <div class="card" onclick="toggle(this)">
       Energia Rural
-      <div class="hidden">Leva energia para propriedades no campo.</div>
+      <div class="hidden">Leva energia para áreas afastadas.</div>
     </div>
 
   </div>
@@ -129,48 +47,22 @@
 
 <section>
   <h2>Simulador de Energia</h2>
-  <p>Digite quantas horas de sol por dia:</p>
-  <input type="number" id="horas" placeholder="Ex: 5">
+  <input type="number" id="horas" placeholder="Horas de sol por dia">
   <button onclick="calcular()">Calcular</button>
-  <div class="result" id="resultado"></div>
-</section>
-
-<section>
-  <h2>Sustentabilidade</h2>
-  <ul>
-    <li>Reduz a poluição</li>
-    <li>Economiza energia</li>
-    <li>Preserva o meio ambiente</li>
-  </ul>
+  <div id="resultado"></div>
 </section>
 
 <section>
   <h2>Sobre o Projeto</h2>
-  <p><strong>Aluno:</strong> Gabriel Boeing Ruaro</p>
-  <p><strong>Escola:</strong> Manoel Ribas CECMPR</p>
-  <p><strong>Evento:</strong> Agrinho 2026</p>
-  <p>
-    Este site foi criado para mostrar como a energia solar pode ajudar na agricultura de forma sustentável.
-  </p>
+  <p>Gabriel Boeing Ruaro</p>
+  <p>Manoel Ribas CECMPR</p>
+  <p>Agrinho 2026</p>
 </section>
 
 <footer>
-  <p>Projeto escolar - Sustentabilidade no campo 🌱☀️</p>
+  <p>Projeto sustentável 🌱☀️</p>
 </footer>
 
-<script>
-  function toggle(card) {
-    const hidden = card.querySelector(".hidden");
-    hidden.style.display = hidden.style.display === "block" ? "none" : "block";
-  }
-
-  function calcular() {
-    let horas = document.getElementById("horas").value;
-    let energia = horas * 1.5;
-    document.getElementById("resultado").innerText =
-      "Energia gerada: " + energia + " kWh (estimativa)";
-  }
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
