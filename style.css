@@ -1,51 +1,62 @@
-body {
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f5f5f5;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial;
 }
 
-header {
+body {
+  background: #f4f4f4;
+}
+
+.hero {
+  height: 100vh;
   background: linear-gradient(135deg, #2e7d32, #fbc02d);
   color: white;
-  text-align: center;
-  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-header h1 {
-  font-size: 2.5em;
+.hero h1 {
+  font-size: 3em;
 }
 
-button {
-  padding: 10px 20px;
+.hero button {
+  margin-top: 20px;
+  padding: 12px 25px;
   border: none;
   background: white;
   color: #2e7d32;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
 }
 
 section {
-  padding: 40px 20px;
+  padding: 60px 20px;
   max-width: 900px;
   margin: auto;
 }
 
 .cards {
   display: flex;
-  gap: 15px;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .card {
   background: white;
-  padding: 15px;
+  padding: 20px;
   flex: 1;
-  border-radius: 10px;
+  border-radius: 15px;
   cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   transition: 0.3s;
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: translateY(-10px);
 }
 
 .hidden {
@@ -53,9 +64,41 @@ section {
   margin-top: 10px;
 }
 
+.simulador input {
+  padding: 10px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.simulador button {
+  margin-top: 10px;
+  padding: 10px;
+  background: #2e7d32;
+  color: white;
+  border: none;
+}
+
+#resultado {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
 footer {
   text-align: center;
   background: #2e7d32;
   color: white;
   padding: 20px;
+}
+
+/* animação */
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 1s;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
 }
