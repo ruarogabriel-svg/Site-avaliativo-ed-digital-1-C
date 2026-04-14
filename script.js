@@ -1,15 +1,20 @@
 function toggle(card) {
-  const hidden = card.querySelector(".hidden");
-  hidden.style.display =
-    hidden.style.display === "block" ? "none" : "block";
+  const text = card.querySelector(".hidden");
+  text.style.display = text.style.display === "block" ? "none" : "block";
 }
 
 function calcular() {
   let horas = document.getElementById("horas").value;
-  let energia = horas * 1.5;
+
+  if (horas <= 0) {
+    document.getElementById("resultado").innerText = "Digite um valor válido.";
+    return;
+  }
+
+  let energia = horas * 1.8;
 
   document.getElementById("resultado").innerText =
-    "Energia gerada: " + energia + " kWh (estimativa)";
+    "Energia estimada: " + energia.toFixed(2) + " kWh/dia";
 }
 
 function scrollToSection() {
@@ -17,3 +22,15 @@ function scrollToSection() {
     behavior: "smooth"
   });
 }
+
+/* animação ao rolar */
+const faders = document.querySelectorAll(".fade");
+
+window.addEventListener("scroll", () => {
+  faders.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      el.classList.add("show");
+    }
+  });
+});
