@@ -2,65 +2,75 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Energia Solar na Agricultura</title>
+  <title>Energia Solar no Agro</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-  <h1>Energia Solar na Agricultura</h1>
-  <p>Um caminho para um futuro sustentável</p>
+<header class="hero">
+  <h1>Agro Solar ☀️🌱</h1>
+  <p>Energia limpa transformando a agricultura</p>
   <button onclick="scrollToSection()">Explorar</button>
 </header>
 
-<section id="sobre">
+<section id="sobre" class="fade">
   <h2>O que é Energia Solar?</h2>
   <p>
-    A energia solar é uma fonte limpa que vem do sol e pode ser usada para gerar eletricidade.
+    A energia solar é gerada a partir da luz do sol e pode ser usada para produzir eletricidade de forma limpa e sustentável.
   </p>
 </section>
 
-<section>
-  <h2>Aplicações na Agricultura</h2>
+<section class="cards-section fade">
+  <h2>Aplicações no Campo</h2>
+
   <div class="cards">
-    
     <div class="card" onclick="toggle(this)">
-      Irrigação
-      <div class="hidden">Uso para bombear água nas plantações.</div>
+      💧 Irrigação
+      <p class="hidden">Bombeamento de água sem uso de energia elétrica convencional.</p>
     </div>
 
     <div class="card" onclick="toggle(this)">
-      Equipamentos
-      <div class="hidden">Alimenta máquinas agrícolas.</div>
+      ⚙️ Equipamentos
+      <p class="hidden">Alimentação de máquinas agrícolas.</p>
     </div>
 
     <div class="card" onclick="toggle(this)">
-      Energia Rural
-      <div class="hidden">Leva energia para áreas afastadas.</div>
+      🏡 Propriedades Rurais
+      <p class="hidden">Energia para casas e estruturas no campo.</p>
     </div>
-
   </div>
 </section>
 
-<section>
+<section class="simulador fade">
   <h2>Simulador de Energia</h2>
-  <input type="number" id="horas" placeholder="Horas de sol por dia">
+  <p>Digite as horas de sol por dia:</p>
+
+  <input type="number" id="horas" placeholder="Ex: 5">
   <button onclick="calcular()">Calcular</button>
+
   <div id="resultado"></div>
 </section>
 
-<section>
+<section class="beneficios fade">
+  <h2>Benefícios</h2>
+  <ul>
+    <li>🌍 Redução da poluição</li>
+    <li>💰 Economia de energia</li>
+    <li>🌱 Sustentabilidade no campo</li>
+  </ul>
+</section>
+
+<section class="sobre fade">
   <h2>Sobre o Projeto</h2>
-  <p>Gabriel Boeing Ruaro</p>
-  <p>Manoel Ribas CECMPR</p>
-  <p>Agrinho 2026</p>
+  <p><strong>Aluno:</strong> Gabriel Boeing Ruaro</p>
+  <p><strong>Escola:</strong> Manoel Ribas CECMPR</p>
+  <p><strong>Evento:</strong> Agrinho 2026</p>
 </section>
 
 <footer>
-  <p>Projeto sustentável 🌱☀️</p>
+  <p>Projeto escolar - Energia Solar no Agro ☀️</p>
 </footer>
 
 <script src="script.js"></script>
